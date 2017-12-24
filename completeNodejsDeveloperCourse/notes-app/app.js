@@ -12,19 +12,23 @@ console.log('Command: ',command);
 console.log('Yargs ',argv);
 
 if(command === 'add') {
-  addStatus = notes.addNote(argv.title, argv.body);
-  if(_.eq(undefined,addStatus)){
+  note = notes.addNote(argv.title, argv.body);
+  if(_.eq(undefined,note)){
     console.log("Duplicate note entered")
   } else {
     console.log("Successfully saved note ");
-    console.log("---");
-    console.log(`Title: ${addStatus.title}`);
-    console.log(`Body: ${addStatus.body}`);
+    notes.logNote(note);
   }
 } else if(command === 'list') {
   notes.getAll();
 } else if(command === 'read') {
-  notes.getNote(argv.title);
+  var note = notes.getNote(argv.title);
+  if(_.eq(undefined,note)){
+    console.log("Note not found")
+  } else {
+    console.log("Successfully read note ");
+    notes.logNote(note);
+  }
 } else if(command === 'remove') {
   var noteRemoved = notes.removeNote(argv.title);
   var message = noteRemoved ? 'Note Successfully removed': 'Note not found';
