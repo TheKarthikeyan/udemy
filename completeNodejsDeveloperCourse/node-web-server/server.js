@@ -32,12 +32,18 @@ hbs.registerHelper('screamIt', (text) => {
 
 app.get('/', (req, res) => {
   //res.send('<h1>Hello Express!</h1>');
-  res.render('home.hbs',{
+  res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeNote: 'Welcome to Home page!'
   });
 });
 
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    pageTitle: 'Projects Page',
+    welcomeNote: 'Welcome to projects page'
+  });
+});
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page'
