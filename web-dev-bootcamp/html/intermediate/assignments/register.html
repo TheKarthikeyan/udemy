@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+</head>
+<body>
+  <h1>Register</h1>
+    <form>
+    <div>
+      <label for="first">First name:</label>
+      <input name="first" type="text" id="first" required placeholder="John">
+      <label for="last">Last name:</label>
+      <input name="last" type="text" id="last" required placeholder="Nash">
+    </div>
+    <div>
+      <label for="male">Male</label>
+      <input value="male" type="radio" id="male" name="sex">
+      <label for="female">Female</label>
+      <input value="female" type="radio" id="female" name="sex">
+      <label for="other">Other</label>
+      <input value="other" type="radio" id="other" name="sex">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="email" required>
+      <label for="password">Password:</label>
+      <input type="password" pattern=".{5,10}" required title="5 to 10 characters" id="password">
+    </div>
+    <div>
+      <label>Birthday:</label>
+        <select name="month" id="month">
+          <option value="0" selected disabled>Month</option>
+          <option value="jan">January</option>
+          <option value="feb">February</option>
+          <option value="mar">March</option>
+        </select>
+        <select name="day" id="day">
+          <option value="0" selected disabled>Day</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <select name="year" id="year">
+          <option value="0" selected disabled>Year</option>
+          <option value="1992">1992</option>
+          <option value="1993">1993</option>
+          <option value="1994">1994</option>
+        </select>
+    </div>
+    <div>
+      <label for="conditions">I agree to the terms and conditions</label>
+      <input name="conditions" type="checkbox" id="conditions" value="agree" required>
+    </div>
+    <button>Submit</button>
+    </form>
+</body>
+</html>
